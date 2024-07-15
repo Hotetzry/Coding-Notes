@@ -19,3 +19,7 @@ for x in fruits:
 
 # Windows IP
 # 10.50.40.76
+
+# windows 10/11 operating system
+# config.ovpn (config file)
+# openVPN-X.X.X-XXXX-amd64.msi (installer version recommended here)
