@@ -28,3 +28,11 @@ windows 10/11 operating system
  
  CYBBH DAY0 Setup for vpn and refresher notes
 
+vim $HOME/.vimrc
+# syntax enable
+# set tabstop=4
+# set shiftwidth=4
+# set expandtab
+# set number
+# filetype indent on
+# set autoindent
