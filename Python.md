@@ -1,6 +1,6 @@
 # Python Notes
 ## SSH Command
-`ssh student@10.x.x.x -x`
+`ssh student@10.x.x.x -X`
 ## For Loop
 This is a for loop example
 "Print each fruit in a fruit list"
