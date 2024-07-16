@@ -115,4 +115,56 @@ else:
     print(num)
 
 ```
+# Define function and for 
+```
+
+#def Beer():
+   # beer =  [ 'Coors', 'Coors light', 'Coors banquet']
+    #for drinks in beer:
+       # print(drinks)
+#Beer()
+
+def Xmen():
+    xmen = ['Superman', 'Night Crawler', 'Deadpool', 'Storm']
+    for hero in xmen:
+        if hero == 'Superman':
+            print('wrong universe')
+        elif hero == 'Deadpool':
+            print(hero + ' is the best one!')
+        else:
+            print('This is a marvel hero')
+Xmen() 
+
+```
+# WHile loop ex
+```
+num = 0
+while num < 5:
+    print(num)
+    num +=1
+
+```
+.upper all capitals
+.lower all lowers
+# Pass/break/continue/return
+```
+def test():
+    while True:
+        usr = input("Type 'Pass', 'Break', 'Continue', or 'Return':\n").lower()
+        if usr == 'pass':
+            pass
+            print("This is a 'pass'.")
+        elif usr == 'break':
+            break
+            print("This is a 'break.")
+        elif usr == 'continue':
+            continue
+            print("This is a 'continue'.")
+        elif usr == 'return':
+            return
+            print == ("This is a 'return'.")
+        else:
+            print('Please choose a valid option.')
+
+```
 
