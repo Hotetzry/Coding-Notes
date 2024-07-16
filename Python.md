@@ -36,3 +36,26 @@ vim $HOME/.vimrc
 # set number
 # filetype indent on
 # set autoindent
+
+# Type Casting: str(), float(), int(), bool()
+  basic functions print(), type() split join
+
+  # Zero index position [] done in brackets starts at 0
+  -1 last letter
+  () tuple = takes up less headspace/ resrouces and cant be changed later
+  [] list
+  del letters [] to remove 
+  ''.join(variable)  will combine and join string
+  (variable).split('.') will split and seperate into seperate entities
+
+  
+  # Email Ex.1
+  ```
+  1 email = 'name@domain.com'
+  2 p1 = email.split ('@')
+  3 p2 = ('.').join(p1)
+  4 p3 = p2.split('.')
+  5 print(p3)
+
+```
+
