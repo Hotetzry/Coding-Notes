@@ -59,3 +59,60 @@ vim $HOME/.vimrc
 
 ```
 
+```
+  1 Fellowship = ['Frodo' , 'Sam', 'Mary' , 'Pip']
+  2 name = '{} and {} beared the ring'.format(Fellowship[0], Fellowship[1])
+  3 print (name)
+# fellowship = [] 
+# fellowship.append ('')
+```
+use print(type( variable) for the exam
+```
+1 blank = []
+  2 e = 'name@domain.com'
+  3 e2 = e.split('@')
+  4 e3 = e.split ('.')
+  5 
+  6 blank.append(e2[0])
+  7 blank.append(e2[1].split('.')[0])
+  8 blank.append(e2[1].split('.')[1])
+  9 print (blank)
+
+```
+equal ==
+not equal !=
+lt = <
+lt= = <=
+gt = >
+gt= >=
+
+if:
+elif:
+else:
+need colon : after any flow statements.
+
+```
+  1 num = int(input('Type a number:\n'))
+  2 if num == 7:
+  3     print('This is True')
+  4 elif num < 7:
+  5     print('num ' + str(num) + ' is < 7')
+  6 elif num > 7 and num < 20:
+  7     print(str(num) + ' is between 7 and 20')
+  8 else:         
+  9     print(str(num)  + ' is too big')
+
+```
+#fizzbuzz example with reimainder/multiple
+```num = int(input('Type a number:\n'))
+if num%5 == 0 and num%3 == 0:
+    print('fizzbuzz')
+elif num%3 == 0:
+    print('fizz')
+elif num%5 == 0:
+    print('buzz')
+else:
+    print(num)
+
+```
+
