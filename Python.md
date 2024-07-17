@@ -168,3 +168,77 @@ def test():
 
 ```
 
+```
+
+#!/usr/bin/env python3
+
+def guess_number(n):
+    while True:
+        correct = int(input('type a number between 1-100\n'))
+        if correct == (23):
+             print('WIN')
+             break
+        elif correct < (23):
+             print('this is lower than the number')
+        elif correct > (100):
+             print('this is outside the scope')
+        elif correct > (23):
+             print(' this is higher than the number')
+
+guess_number(23)
+                                                                                   
+
+```
+
+# range(n)
+range is a class and can be type casted into a range
+list(range(10)) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9} range(start, stop, step) = list(range(5,10,2)) = 5, 7, 9
+
+# slicing nums [::] start stop step slicing nums {::-1} = 5, 4, 3, 2, 1
+
+ord ('a') chr ('97') opposites
+alphabet = []
+for i in range(07, 123):
+alphabet.append (chr(i))
+
+```
+
+def update_light(current):
+    if current == "green":
+        return "yellow"
+    elif current == "yellow":
+        return "red"
+    elif current == "red":
+        return "green"
+    else:
+        return "This is not a traffic light color."
+
+```
+#Dictionary {}
+
+```
+romanNumerals = {'I':1, 'V':5, 'X':10, 'L':50}
+romanNumerals['X']
+
+romanNumerals['C'] = 100
+romanNumerals['D'] = 500
+romanNumerals['M'] = 1000
+
+romanNumerals['C']
+
+del romanNumerals['C']
+'C' in romanNumerals
+'M' in romanNumerals
+
+```
+romanNumerals = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+
+#Print all keys with values
+for key in romanNumerals:
+    print('{} = {}'.format(key, romanNumerals[key]))
+
+#Easier method
+for key, value in romanNumerals.items():
+    print('{} = {}'.format(key, value))
+
+
