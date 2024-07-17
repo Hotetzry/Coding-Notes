@@ -241,4 +241,16 @@ for key in romanNumerals:
 for key, value in romanNumerals.items():
     print('{} = {}'.format(key, value))
 
+```
+ 1 inventory = {'CFB25': 69.99, 'MVP' :149.99, 'wheels': 5}
+  2 order = (['wheels', 5],['MVP', 2])
+  3 total = 0
+  4 for i in order:
+  5     total += inventory[i[0]] * i[1]
+  6 print(total)
+  7         
+  8         
+
+```
+
 
