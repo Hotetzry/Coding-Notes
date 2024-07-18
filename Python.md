@@ -474,3 +474,7 @@ reverse = sentence.split()
 reverse.reverse()
 return ' '.join(reverse)
 ```
+# take a number and every 3 digits place a comma
+```
+return '{:,}'.format(n)
+```
