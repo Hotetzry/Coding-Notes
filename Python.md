@@ -467,4 +467,10 @@ False
 True
 ```
 
-    
+     '''
+# reverse a string
+```
+reverse = sentence.split()
+reverse.reverse()
+return ' '.join(reverse)
+```
