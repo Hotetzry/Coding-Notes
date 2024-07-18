@@ -459,6 +459,12 @@ with open(filename) as fp:
  return len(fp.readline()) -1
 pass
 ```
-
+# numeric
+```
+'a' .isnumeric()
+False
+'1' .isnumeric()
+True
+```
 
     
