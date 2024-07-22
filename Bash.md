@@ -54,8 +54,10 @@ touch $HOME/1123/{1,2,3,4,5,6~,7~,8~,9~}.txt
 mkdir $HOME/11{23,34,45,56}
 
 
-#
-
-
-
+#Cut 
+cut "file" | cut -d: -f1(-) prints out all
+                 variable field 1
+cut ... -s (strict) only asking for delimeter
+&& , || , ! , &, |
+##
 
