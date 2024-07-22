@@ -74,3 +74,19 @@ Use only the find and cp commands. You will need to utilize the -exec option on 
 The find command uses BOOLEAN "!" to designate that it does not want to find any files or directories that follows.
 find $HOME/1123 -type f -name "*.txt" -and ! -name "*~*" -exec cp {} $HOME/CUT \;
 ```
+
+
+
+```
+    Using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
+    Write those to a text file called names in $HOME/CUT directory.
+    Omit the names filename from your output.
+
+
+
+
+
+
+
+ls -l $HOME/CUT | cut -d: -f2 | cut -d" " -f2 | cut -d. -f1-2 -s > $HOME/CUT/names
+```
