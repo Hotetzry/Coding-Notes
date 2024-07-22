@@ -33,7 +33,7 @@ find -name \*.txtfind a time -C]\,FOIND
 
 #print -f
 inode.number to files
-find /var/log -iane *.log -printf "%f %i\n"
+find /var/log -iname *.log2>dev/null -printf "%i %f\n"
 
 grep -E extended grep
 egrep
@@ -60,4 +60,17 @@ cut "file" | cut -d: -f1(-) prints out all
 cut ... -s (strict) only asking for delimeter
 && , || , ! , &, |
 ##
-
+```
+Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
+#find / -inum 4026532575 2>/dev/null -printf "%f\n"
+```
+```
+Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
+#find /var -empty -printf "%i %f\n"
+```
+```
+Copy all files in the $HOME/1123 directory, that end in ".txt", and omit files containing a tilde "~" character, to directory $HOME/CUT.
+Use only the find and cp commands. You will need to utilize the -exec option on find to accomplish this activity.
+The find command uses BOOLEAN "!" to designate that it does not want to find any files or directories that follows.
+find $HOME/1123 -type f -name "*.txt" -and ! -name "*~*" -exec cp {} $HOME/CUT \;
+```
