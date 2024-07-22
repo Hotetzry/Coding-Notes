@@ -40,7 +40,7 @@ egrep
 grep - n 
 grep -v equals inverted search
 cat fake1passwd.txt | grep /bin/bash
-# bas h printf oheonixmap.com
+# bash printf oheonixmap.com
 # 
 single versus double brackets
 * single brackets baeldung.com
