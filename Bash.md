@@ -52,3 +52,10 @@ find . -name "*.txt"
 touch $HOME/1123/{1,2,3,4,5,6~,7~,8~,9~}.txt
 # brace expansion
 mkdir $HOME/11{23,34,45,56}
+
+
+#
+
+
+
+
