@@ -54,7 +54,7 @@ touch $HOME/1123/{1,2,3,4,5,6~,7~,8~,9~}.txt
 mkdir $HOME/11{23,34,45,56}
 
 
-#Cut 
+#CUT
 cut "file" | cut -d: -f1(-) prints out all
                  variable field 1
 cut ... -s (strict) only asking for delimeter
@@ -90,3 +90,21 @@ find $HOME/1123 -type f -name "*.txt" -and ! -name "*~*" -exec cp {} $HOME/CUT \
 
 ls -l $HOME/CUT | cut -d: -f2 | cut -d" " -f2 | cut -d. -f1-2 -s > $HOME/CUT/names
 ```
+#AWK
+awk -F: '{print$1}' will print field one with a delimter of :
+using AWK '{print $NF}' will print the last field of every line
+awk -F: 'BEGIN {OFS=":"} {print $1, $3}' fake1passwd
+{print $0} dispaly all string type data that matches
+cat /etc/passwd | awk -F: '($3 >= 150){print $0}' will print out every field 3 item that is greater than 150
+
+#SORT
+sort -n = sort numerically 1-10
+sort -nr = numerically reversed 10-1
+cannot use sort on its own, needs command or argument before it
+ex: cat fake1passwd.txt | sort -k 7
+| sort -t : sorts on delimeter
+sort -u sorts unique
+sort -t : -k 1 | uniq
+
+#REGEX 
+regex101 grep -e or egrep
