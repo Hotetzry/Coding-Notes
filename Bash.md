@@ -108,3 +108,19 @@ sort -t : -k 1 | uniq
 
 #REGEX 
 regex101 grep -e or egrep
+
+alias variable = variable 
+
+#SED 
+stream editor utility 
+-g global = all of them
+no g will only repace one instance
+sed -e 's/chicken/hamburger/g' -e s/pepperoni/sausage/' pizza.txt
+chicekn chicken
+hamburger hamburger 
+pepperoni
+sausage^
+sed -e /chicken/d delete the whole line
+
+A=$(ind usr bin 0name passwrww=d=a)
+commandsub
