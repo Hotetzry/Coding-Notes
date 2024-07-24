@@ -78,15 +78,9 @@ find $HOME/1123 -type f -name "*.txt" -and ! -name "*~*" -exec cp {} $HOME/CUT \
 
 
 ```
-    Using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
-    Write those to a text file called names in $HOME/CUT directory.
-    Omit the names filename from your output.
-
-
-
-
-
-
+ Using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
+ Write those to a text file called names in $HOME/CUT directory.
+ Omit the names filename from your output.
 
 ls -l $HOME/CUT | cut -d: -f2 | cut -d" " -f2 | cut -d. -f1-2 -s > $HOME/CUT/names
 ```
@@ -133,6 +127,17 @@ find [data] - exec [command] {} + = for each result command is only ran once
 
 
 
+#3 Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
+find /var -empty -printf "%i %f\n"
+
+
+
+
+
+#4 Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
+find / -inum 4026532575 2>/dev/null -printf "%f\n"
+
+
 #5 using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
 ls -l $HOME/CUT | cut -d: -f2 | cut -d" " -f2 | cut -d. -f1-2 -s > $HOME/CUT/names
 
@@ -153,6 +158,19 @@ awk -F: -v "awk_var=$a" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' $HOME/PASS/sha
 #10 Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
 sed -e '/\/bin\/sh/d' -e '/\/bin\/false/d' $HOME/passwd > $HOME/PASS/passwd.txt
 
+#!/bin/bash
+content=$(cat simple.txt)
+if [[$contents == "tacos"]]; then
+   echo "are good on tuesdays"
+elif [[$contents == "costco is amzing"]]; then
+   echo "and will save you money"
+elif [[$contents == "chicken bake"]]; then 
+   echo "tasty but will make you fail ht/wt"
+else
+   echo "no tax at commissary"
+fi 
 
-
-
+A= him 
+echo the story of robert who is $A
+echo the $A 
+sub variables in
