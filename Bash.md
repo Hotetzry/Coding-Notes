@@ -127,35 +127,35 @@ find [data] - exec [command] {} + = for each result command is only ran once
 
 
 
-#3 Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
+# 3 Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
 find /var -empty -printf "%i %f\n"
 
 
 
 
 
-#4 Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
+# 4 Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
 find / -inum 4026532575 2>/dev/null -printf "%f\n"
 
 
-#5 using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
+# 5 using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
 ls -l $HOME/CUT | cut -d: -f2 | cut -d" " -f2 | cut -d. -f1-2 -s > $HOME/CUT/names
 
-#6 Write a basic bash script that greps ONLY the IP addresses in the text file provided (named StoryHiddenIPs in the current directory); sort them uniquely by number of times they appear.
+# 6 Write a basic bash script that greps ONLY the IP addresses in the text file provided (named StoryHiddenIPs in the current directory); sort them uniquely by number of times they appear.
 cat StoryHiddenIPs | grep -E -o '([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})' | sort -n | uniq -c | sort -nr
 
-#7 Using ONLY the awk command, write a BASH one-liner script that extracts ONLY the names of all the system and user accounts that are not UIDs 0-3.
+# 7 Using ONLY the awk command, write a BASH one-liner script that extracts ONLY the names of all the system and user accounts that are not UIDs 0-3.
 Only display those that use /bin/bash as their default shell, The input file is named $HOME/passwd and is located in the current directory. Output the results to a file called $HOME/SED/names.txt
 cat $HOME/passwd | awk -F: '($3>3)' | awk -F: '($7 == "/bin/bash"){print $1}' > $HOME/SED/names.txt
 
-#8 Find all dmesg kernel messages that contain CPU or BIOS (uppercase) in the string, but not usable or reserved (case-insensitive) Print only the msg itself, omitting the bracketed numerical expressions ie: [1.132775]
+# 8 Find all dmesg kernel messages that contain CPU or BIOS (uppercase) in the string, but not usable or reserved (case-insensitive) Print only the msg itself, omitting the bracketed numerical expressions ie: [1.132775]
 dmesg | grep -E 'CPU|BIOS' | cut -d] -f2- | grep -v -E 'usable|reserved'
 
-#9 Write a Bash script using "Command Substitution" to replace all passwords, using openssl, from the file $HOME/PASS/shadow.txt with the MD5 encrypted password: Password1234, with salt: bad4u Output of this command should go to the screen/standard output. You are not limited to a particular command, however you must use openssl. Type man openssl passwd for more information.
+# 9 Write a Bash script using "Command Substitution" to replace all passwords, using openssl, from the file $HOME/PASS/shadow.txt with the MD5 encrypted password: Password1234, with salt: bad4u Output of this command should go to the screen/standard output. You are not limited to a particular command, however you must use openssl. Type man openssl passwd for more information.
 a=$(openssl passwd -1 -salt bad4u Password1234) 
 awk -F: -v "awk_var=$a" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' $HOME/PASS/shadow.txt
 
-#10 Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
+# 10 Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
 sed -e '/\/bin\/sh/d' -e '/\/bin\/false/d' $HOME/passwd > $HOME/PASS/passwd.txt
 
 #!/bin/bash
@@ -175,6 +175,7 @@ echo the story of robert who is $A
 echo the $A 
 sub variables in
 
+# replace every instance of cat with dog and Navy with Army and output to a file
 function q1()
 {
   #Valid Variables are:
@@ -183,5 +184,38 @@ function q1()
   sed -e 's/cat/dog/g' -e 's/Navy/Army/g' $1 >> $2
 }
 
+# print usernames only from etc/passwd
+cut -d":" -f1 /etc/passwd
 
+# sort by username and sort numerically by uid
+sort -n -t: -k3 $filename | cut -d':' -1
 
+# print count of files listed in directory 
+ls -1 $dirname | wc -l
+
+# delete files and then directory $dirdel
+rm -r $dirdel
+
+# make a new file and change the modified time  
+touch -t "$filedate"1730 $newfile
+
+# 7
+cont= `cat $fname`
+if [[ $cont -lt 10 ]] ; then
+ echo single digit
+elif [[ $cont -lt 100 ]] ; then
+ echo double digit
+elif [[ $cont -lt 1000 ]] ; then
+ echo triple digit
+else
+ echo Error
+fi
+
+# 8
+cat $src | grep -v $match > $dst
+
+# 9
+pkill $procname
+
+# 10 get all the files that were modified in the last day only.
+find $dirpath -type f -mtime -1 | sort
