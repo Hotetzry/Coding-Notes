@@ -174,3 +174,14 @@ A= him
 echo the story of robert who is $A
 echo the $A 
 sub variables in
+
+function q1()
+{
+  #Valid Variables are:
+  infile=$1
+  outfile=$2
+  sed -e 's/cat/dog/g' -e 's/Navy/Army/g' $1 >> $2
+}
+
+
+
