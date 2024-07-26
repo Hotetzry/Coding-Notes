@@ -1,4 +1,4 @@
- #LESS ss64.com for help.
+zf #LESS ss64.com for help.
  Pg Down; spacebar; CTRL+V; CTRL+F 	moves down one screen length
  Pg Up; CTRL+B 				move back up one screen length
  Down Arrow; ENTER; CTRL+N 		moves down one line at a time
@@ -62,7 +62,8 @@ cut ... -s (strict) only asking for delimeter
 ##
 ```
 Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
-#find / -inum 4026532575 2>/dev/null -printf "%f\n"
+#find / -inum 4026532575 2>/dev/null -printf "%f\n"/etc
+
 ```
 ```
 Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
