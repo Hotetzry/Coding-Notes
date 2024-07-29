@@ -20,3 +20,11 @@ New-Alias -name "gh" get-help
 # using script to complete task. array
 $array = "gal", "dir", "echo", "?", "ft"
 $array | foreach-object{get-alias $_}
+# (get-process).processname
+
+get-process | get-member -membertype properties/methods: lists all available members for given command.
+
+get-service | where-object {$_.status -eq "running"}
+
+get-service | where-object -property status -eq 'stopped'
+
