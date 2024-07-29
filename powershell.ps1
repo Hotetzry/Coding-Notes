@@ -1,4 +1,4 @@
-# POWERSHELL Notes
+-descending -proe# POWERSHELL Notes
 Enter powershell: xfreerdp /u:student /v:10.50.40.76 -dynamic-resolution +glyph-cache +clipboard
 
 get-command -verb/-noun (shows all verbs and noun cmdlets/alias/functions
@@ -65,7 +65,7 @@ function fruit-host {
 $var1 = get-random -minimum 25 -maximum 50
 $var2 = get-random -minimum 1 -Maximum 10
 $sum = $var1 + $var2 
-$sub = $var1 - $var2
+$sub = $var1 - $var2 would suggest you to have it in a csv file and pass the file to the script.
 $prod = $var1 * $var2
 $quo = $var1 / $var2
 
