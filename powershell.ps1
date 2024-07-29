@@ -122,4 +122,4 @@ foreach ($grp in (get-localgroup).name) {
     }
 
 
-
+get-ciminstance win32_service | sort-object -property state | ft -Property ProcessId,Name,State,Pathname
