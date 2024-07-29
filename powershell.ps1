@@ -28,3 +28,56 @@ get-service | where-object {$_.status -eq "running"}
 
 get-service | where-object -property status -eq 'stopped'
 
+$var1 = "jon"
+write-host "Hello $var1"
+write-host 'Hello var1'
+
+$x = 10
+Get-variable x
+Get-childitem variable:x
+
+$x, $y, $z = "this", "that", "third"
+test-path variable:x
+remove-variable x
+del variable:x
+
+function fruit-host {
+    write-host "Apple"
+    write-host "Orange"
+    write-host "Banana"
+    write-host "Pear"
+    }
+
+
+
+
+
+
+
+
+
+
+ function Fruit-output {
+    Write-Output "Apple"
+    Write-Output "Orange"
+    Write-Output "Banana"
+    Write-Output "Pear" 
+    } 
+   
+ fruit-host | sort 
+ fruit-output | sort
+
+
+
+ clear-host
+$var1 = get-random -minimum 25 -maximum 50
+$var2 = get-random -minimum 1 -Maximum 10
+$sum = $var1 + $var2 
+$sub = $var1 - $var2
+$prod = $var1 * $var2
+$quo = $var1 / $var2
+
+write-output "$var1 + $var2 = $sum" `n
+write-output "$var1 - $var2 = $sub" `n
+write-output "$var1 * $var2 = $prod" `n
+write-output "$var1 / $var2 = $quo" `n
