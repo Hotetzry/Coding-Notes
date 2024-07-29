@@ -86,7 +86,7 @@ $revarray | where-object {$_ %3 -eq 0} | write-output
 
 
 # Dictionary use
-
+##
 $employee1 = [ordered]@{}
 $employee2 = [ordered]@{}
 $employee3 = [ordered]@{}
@@ -113,4 +113,13 @@ $employee3["Job"] = "$JobT"
 $employee1
 $employee2
 $employee3
+
+##
+foreach ($grp in (get-localgroup).name) {
+    write-host "`n$grp" -ForegroundColor red
+    '==================================='
+    (Get-LocalGroupMember -Name $grp).name ` -replace("{$env:computername\\",'')
+    }
+
+
 
