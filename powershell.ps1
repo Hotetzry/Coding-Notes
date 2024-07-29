@@ -85,3 +85,32 @@ $revarray = -3..15
 $revarray | where-object {$_ %3 -eq 0} | write-output 
 
 
+# Dictionary use
+
+$employee1 = [ordered]@{}
+$employee2 = [ordered]@{}
+$employee3 = [ordered]@{}
+
+$employee1.First = "Mary"
+$employee1["Last"] = "Hopper"
+$employee1.ID = "001"
+$employee1["Job"] = "Software Developer"
+
+
+$employee2.First = "John"
+$employee2["Last"] = "Williams"
+$employee2.ID = "002"
+$employee2["Job"] = "Web Developer"
+ 
+$Fname = Read-host "please type your First name"
+$LName = Read-host "please type your Last name"
+$JobT= Read-Host "please type your job position"
+$employee3.First = "$Fname"
+$employee3["Last"] = "$LName"
+$employee3.ID = "003"
+$employee3["Job"] = "$JobT"
+
+$employee1
+$employee2
+$employee3
+
