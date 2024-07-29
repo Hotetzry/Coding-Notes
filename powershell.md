@@ -68,7 +68,7 @@ function fruit-host {
  fruit-output | sort
 
 
-
+```
  clear-host
 $var1 = get-random -minimum 25 -maximum 50
 $var2 = get-random -minimum 1 -Maximum 10
@@ -81,3 +81,4 @@ write-output "$var1 + $var2 = $sum" `n
 write-output "$var1 - $var2 = $sub" `n
 write-output "$var1 * $var2 = $prod" `n
 write-output "$var1 / $var2 = $quo" `n
+```
