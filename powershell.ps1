@@ -74,3 +74,14 @@ write-output "$var1 - $var2 = $sub" `n
 write-output "$var1 * $var2 = $prod" `n
 write-output "$var1 / $var2 = $quo" `n
 
+
+
+$revarray = -3..15
+#$revarray = $revarray[($revarray.length-1)..0]
+#$revarray
+
+
+#$revarray = $revarray[($revarray.length-1)..0] 
+$revarray | where-object {$_ %3 -eq 0} | write-output 
+
+
