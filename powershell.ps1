@@ -49,14 +49,6 @@ function fruit-host {
     }
 
 
-
-
-
-
-
-
-
-
  function Fruit-output {
     Write-Output "Apple"
     Write-Output "Orange"
