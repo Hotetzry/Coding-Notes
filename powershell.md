@@ -8,11 +8,14 @@ get-help *log* will show all commands relating to.
 get-childitem -path C:/windows -filter *.exe -recurse -name
 # get running process list that only start with S
 get-process -name s*
-#Find the cmdlet and its purpose for the following aliases
+
+# Find the cmdlet and its purpose for the following aliases
 get-command gal/dir/echo/?
-#display list of firewall settings
+
+# display list of firewall settings
 run as administrator : Get-NetFirewallRule
-#create a new alias
+
+# create a new alias
 New-Alias -name "gh" get-help
 # using script to complete task. array
 $array = "gal", "dir", "echo", "?", "ft"
