@@ -254,3 +254,31 @@ DO {
     $num
     $num++
 }while($num -le 100 -and $num -ne 80)
+
+$line1 = "Do you have model number: MT5437 for John.doe@sharklasers.com"
+$line2 = "What model number for John.doe@sharklasers.com"
+$line3 = "the model number for John.doe@sharklasers.com is MT5437"
+$Model = "MT5437"
+$line1,$line2,$line3 | foreach-object {
+if ($_ -match $model) {
+    write-host  $matches[0]":$_"
+    }
+else{
+    write-host "Model number not on: $_"
+    }
+}
+
+$array = "notepad.exe", "MsEdge.exe", "mspaint.exe"
+$array | ForEach-Object {Start-Process $_}
+Get-Process | sort starttime | select -last 3 | sort ID | ft ID,name,starttime
+
+Add-Member -InputObject $mystruck ScriptMethod accelerate { "skinny pedal on right"}
+$mystruck | Add-Member -InputObject ScriptMethod park { "finding a spot is impossible"}
+
+$mystruck | Add-Member ScriptMethod park { "finding a spot is impossible"}
+
+$mystruck.park()
+
+
+get-process | Where-Object processname -ne "idle" | sort-object starttime | select -last 10 | format-table processname, starttime
+
