@@ -172,4 +172,85 @@ $sum = 0
 $array | foreach-object {$sum += $_}
 $sum
 
-# 
+# adding to objects
+add-member -MemberType NoteProperty -name color -value white -InputObject $mystruck
+Add-Member -me NoteProperty -in $mystruck -na make -Value honda -force
+Add-Member -InputObject $mystruck NoteProperty model "Tundra sr5(technically)"
+$mystruck
+
+ $mystruck | Add-Member ScriptMethod park { "finding a spot is impossible"}
+ Add-Member -InputObject $mystruck ScriptMethod accelerate { "skinny pedal on right"}
+7,8,9,6,15 -gt 8
+
+$fruit = 'mango', 'watermelon', 'tomatoes'
+
+$fruit -contains 'apple'
+
+'powershell' -like "*shell"
+true
+
+$text = "your account username is ACE4495"
+$pattern = '([A-F]{3})(\d{4})'
+$text -match $pattern
+true
+
+$x = 11
+if($x -gt 10){"$x is larger than 10"}
+else {"11 is larger than 10"}
+
+
+$x = 2 ("n")
+if ($x -eq 5) {
+    write-host "bob"
+    }
+elseif ($x -eq 4) {
+    write-host "sue"
+    }
+elseif ($x -eq 2) {
+    write-host "Tom"
+    }
+elseif ($x -gt 1) {
+    write-host "Mary"
+    }
+else {
+    write-host "who am i?"
+    }
+
+
+$nums = 1,2,3,4,5
+$nums | ForEach-Object{$_ * 5}
+
+
+
+$nums = 1, 2, 3, 4, 5
+$sum = 0
+$nums | ForEach-Object {$sum += $_ }
+$sum
+
+get-process | Select-Object -first 10 | ForEach-Object {$_.name} | ForEach-Object {$_.toupper()}
+
+
+$teams = "yankees", "fsu", "tigers", "greenjackets"
+foreach($teams in $teams){"sportsball $teams"}
+sportsball yankees
+sportsball fsu
+sportsball tigers
+sportsball greenjackets
+
+
+$var = ""
+while($var -ne "MUHRINS"){
+    $var = read-host "whiich branch of the military is the best?"
+    }
+whiich branch of the military is the best?: army
+whiich branch of the military is the best?: navy
+whiich branch of the military is the best?: coast guard
+whiich branch of the military is the best?: air force
+whiich branch of the military is the best?: MUHRINS
+
+
+$num = 0
+DO {
+    $num
+    $num++
+}while($num -le 100 -and $num -ne 80)
