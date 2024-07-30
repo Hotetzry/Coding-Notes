@@ -123,3 +123,53 @@ foreach ($grp in (get-localgroup).name) {
 
 
 get-ciminstance win32_service | sort-object -property state | ft -Property ProcessId,Name,State,Pathname
+
+$myblock = {get-service | format-table name, status}
+ & $myblock
+
+get-childitem | sort-object -property extension -Descending | ft -groupby extension
+
+get-childitem | group-object {$_.length -lt 1kb}
+
+Get-process | select-object -last/-first 10
+
+
+# display only day of the week 
+get-date | select-object -expandproperty dayofweek 
+
+# display command to show installed hotfix 
+get-hotfix/ then expand on hotfix
+get-hotfix | sort-object -property installedon | format-table installedon, hotfixid, description 
+
+
+# display processes that were first and last time started
+get-process | where-object starttime | sort-object -property starttime | select-object -first 1 -last 1  -property starttime 
+
+# get all services that are running 
+get-service | where-object{$_.status -eq 'running'}
+
+# get object where size is greater than 100kb
+gci *.txt | where-object{$_.length -gt 100}
+
+# find anything starting with microsoft
+get-process | Where-Object {$_.company -like 'micro*'} | format-table name, description, company
+
+# find any process that is not powershell
+get-process | Where-Object {$_.name -notlike 'powershell*'} | sort-object id -Descending
+
+# sort non idle processnames
+get-process | Where-Object processname -ne "idle" | sort-object starttime | select -last 10 | format-table processname, starttime
+
+# get unique numbers from a long string of numbers 
+1,2,3,1,2,3,1,2,3,1,2,3 | sort-object | get-unique
+
+# get count of objects/files in a folder
+Get-ChildItem | Measure-Object Length
+
+# count in an array 
+$array = 1,2,3,4,5
+$sum = 0 
+$array | foreach-object {$sum += $_}
+$sum
+
+# 
