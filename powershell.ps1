@@ -331,3 +331,29 @@ Function Get-Multisum([array]$array,[int]$number){
 
 
 }
+
+Function Get-Longestname{
+    Begin{
+        $count = 0 
+        $states = @()
+    }
+    Process{
+        while($count -lt 3){
+            $usr = read-host "Enter a U.S State"
+            $states += $usr
+            $count += 1 
+        }
+    }
+    End{
+        $list = $states | sort -Property length -Descending
+        foreach($state in $list){
+            "$state`: " + $state.length
+        }
+    }
+
+}
+
+
+
+
+
