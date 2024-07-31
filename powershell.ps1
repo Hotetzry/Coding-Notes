@@ -282,3 +282,52 @@ $mystruck.park()
 
 get-process | Where-Object processname -ne "idle" | sort-object starttime | select -last 10 | format-table processname, starttime
 
+
+
+
+$psitem same as $_
+$True/$False
+$Matches/$Input
+F5 runs script highlighted text
+F8 runs entire script
+
+function Get-Sum{
+    Begin {$_ - 0}
+    Process {$sum += $_; $_}
+    End {$sum}
+
+
+
+Function Get-Multisum([array]$array,[int]$number){
+    Begin{$sum = 0}
+    process{
+        foreach($num in $array){
+         if($num -eq $number){
+            continue
+            }
+            $sum += $num; $sum; $num
+        }
+    }
+    end{$sum}    
+
+
+
+
+}
+
+Function Get-Multisum([array]$array,[int]$number){
+    Begin{$sum = @()}
+    process{
+        foreach($num in $array){
+         if($num -eq $number){
+            continue
+            }
+            $sum += $num
+        }
+    }
+    end{($sum | Measure-Object -sum).count/.sum}    
+
+
+
+
+}
