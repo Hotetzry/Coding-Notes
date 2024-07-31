@@ -379,3 +379,5 @@ Function Get-Netinfo {
     "IP: {0}`nSubnet: {1}`nGateway: {2}" -f $ip,$subnet,$gw
     }
     
+'1.8.2.44'.split(".")[1]
+#1,2,3,4,5 -join ""
