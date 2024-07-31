@@ -326,9 +326,11 @@ Function Get-Multisum([array]$array,[int]$number){
         }
     }
     end{($sum | Measure-Object -sum).count/.sum}    
-##
 
-##
+
+
+
+
 }
 
 Function Get-Longestname{
@@ -352,7 +354,28 @@ Function Get-Longestname{
 
 }
 
-##
 
 
+Function Get-Netinfo {
+    $pattern = '.*?((\d{1,3}\.){3}\d{1,3})'
+    $netinfo = ipconfig
+    $ip = $netinfo -match "IPV4$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    $subnet = $netinfo -match "Subnet$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    $gw = $netinfo -match "Gate$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    
+    "IP: {0}" -f $ip
+    "Subnet: {0}" -f $subnet
+    "Gateway: {0}" -f $gw
+    
+OR 
 
+Function Get-Netinfo {
+    $pattern = '.*?((\d{1,3}\.){3}\d{1,3})'
+    $netinfo = ipconfig
+    $ip = $netinfo -match "IPV4$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    $subnet = $netinfo -match "Subnet$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    $gw = $netinfo -match "Gate$pattern" | ForEach-Object{if ($_ -match $pattern){$matches[1]}}
+    
+    "IP: {0}`nSubnet: {1}`nGateway: {2}" -f $ip,$subnet,$gw
+    }
+    
