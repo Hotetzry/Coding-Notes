@@ -311,7 +311,7 @@ Function Get-Multisum([array]$array,[int]$number){
     end{$sum}    
 
 
-
+##
 
 }
 
@@ -326,10 +326,9 @@ Function Get-Multisum([array]$array,[int]$number){
         }
     }
     end{($sum | Measure-Object -sum).count/.sum}    
+##
 
-
-
-
+##
 }
 
 Function Get-Longestname{
@@ -353,7 +352,7 @@ Function Get-Longestname{
 
 }
 
-
+##
 
 
 
