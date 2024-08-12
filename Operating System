@@ -38,3 +38,14 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ServiceGroupOrder
 HKEY_LOCAL_MACHINE\CurrentControlSet\Control\GroupOrderList
 
 
+./sigcheck -m C:\windows\regedit.exe
+PROCMON command
+New-PSDrive -Name "SysInt" -PSProvider FileSystem -Root "\\live.sysinternals.com\Tools"
+net use * http://live.sysinternals.com 
+
+TCPVIEW / PsLoggedon
+
+
+
+
+
