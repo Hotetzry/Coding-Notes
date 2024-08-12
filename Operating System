@@ -1,0 +1,40 @@
+# Windows and Linux Operating system notes
+Sort process into good table = PS: Get-Process | Select Name, Id, Description | Sort -Property Id | more
+                               Tasklist -svc
+Define by name or location: Get-Process -Name "*chrome*" | Select-Object -ExpandProperty Modules | more
+Get-Process chrome | foreach {$_.modules} | more
+Get-Ciminstance Win32_Process
+Get-Ciminstance Win32_service | Select Name, Processid, Pathname | more
+Get-Service | Where-Object {$_.Status -eq "Running"}
+
+
+Get-ScheduledTask | Select * | select -First 1 = Good way to establish Persistence.
+
+
+# What are some Registry keys that can be used for autoruns?
+
+Registry Keys Locations, Locations connected with Services.
+
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run - Local Machine
+
+HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+HKLM\System\CurrentControlSet\Services
+
+Remember that the Users have individual Hives with autoruns as well as the Current User.
+
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run - Current User
+
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+HKU\<sid>\Software\Microsoft\Windows\CurrentVersion\Run - Specific User
+
+HKU\<sid>\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+The order in which services are loaded can be adjusted.
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ServiceGroupOrder
+
+HKEY_LOCAL_MACHINE\CurrentControlSet\Control\GroupOrderList
+
+
