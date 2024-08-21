@@ -46,6 +46,27 @@ net use * http://live.sysinternals.com
 TCPVIEW / PsLoggedon
 
 
+Powershell Profiles + $profile for list of commands. 4 profiles for persistence.
+
+All Users, All Hosts = $PsHome\Profile.ps1
+
+All Users, Current Host = $PsHome\Microsoft.PowerShell_profile.ps1
+
+Current User, All Hosts = $Home\[My]Documents\Profile.ps1
+
+Current User, Current Host = $Home\[My ]Documents\WindowsPowerShell\Profile.ps1
 
 
+
+Windows Registry = Run keys location persistence.
+Get-item for Registry values powershell 
+get-childitem for content of key.
+run/run once keys 
+
+linux persistence 
+rc files, syslog, sbin/init, crontab, schtasks, bash profile, etc/profiles, 
+
+ports 1234/4321, 4444,6666 
+
+check all locations from crom damien 
 
