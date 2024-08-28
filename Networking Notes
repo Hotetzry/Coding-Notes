@@ -44,3 +44,10 @@ Dec 	Hex 	Dec 	Hex 	Dec 	Hex 	Dec 	Hex 	Dec 	Hex 	Dec 	Hex 	Dec 	Hex 	Dec 	Hex
 29 	1D 	61 	3D 	93 	5D 	125 	7D 	157 	9D 	188 	BD 	221 	DD 	253 	FD
 30 	1E 	62 	3E 	94 	5E 	126 	7E 	158 	9E 	190 	BE 	222 	DE 	254 	FE
 31 	1F 	63 	3F 	95 	5F 	127 	7F 	159 	9F 	191 	BF 	223 	DF 	255 	FF
+
+
+
+RAW SOCKETS ARE IN KERNEL SPACE
+import {module}
+from {module} import *
+xxd -r file-encoded.txt file-decoded.txt
