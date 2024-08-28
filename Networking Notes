@@ -51,3 +51,5 @@ RAW SOCKETS ARE IN KERNEL SPACE
 import {module}
 from {module} import *
 xxd -r file-encoded.txt file-decoded.txt
+message = b'Message'
+hidden_msg = binascii.hexlify(message)
