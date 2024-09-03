@@ -176,6 +176,47 @@ Entry Float IP: 10.50.37.85
 
     X 
 
+SCP: Source file comes first 
+Download FIle from remote to local/ scp student@172.16.82.106:secretstuff.txt /home/student
+
+Upload file to remote from local/ scp secretstuff.txt student@172.16.82.106:/home/student
+
+copy file from remote host to sepereate remote host/ scp -3 student@172.16.82.106:/home/student/secretstuff.txt student@172.16.82.112:/home/student
+
+
+create local port forward: ssh student@172.16.82.106 -L 1111:localhost:22 -NT
+
+download from tunnel: scp -P 1111 student@localhost:secretstuff.txt /home/student
+
+upload through tunnel : scp -P 1111 secretstuff.txt student@localhost:/home/student
+
+
+nc -lvp 9001 > newfile.txt / recieve file 
+nc 172.16.82.106 9001 < file.txt / send file
+
+if no netcat 
+reciveing box: nc -lvp 1111 > devtcpfile.txt
+sending box: cat secret.txt > /dev/tcp/10.10.0.40/1111
+
+encode: echo "Hex encoding test" | xxd -p
+48657820656e636f64696e6720746573740a
+reverse: echo "48657820656e636f64696e6720746573740a" | xxd -r -p
+Hex encoding test
+
+
+base64 -w0 logoCyber.png
+^^^^^
+base64 -d b64image.png > logoCyber.png
+
+
+
+
+
+TUNNELLING NOTES:::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
 
 
 
