@@ -215,8 +215,27 @@ base64 -d b64image.png > logoCyber.png
 TUNNELLING NOTES:::::::::::::::::::::::::::::::::::::::::::
 
 
+-t - Specifies the table. (Default is filter)
+-A - Appends a rule to the end of the list or below specified rule
+-I - Inserts the rule at the top of the list or above specified rule
+-R - Replaces a rule at the specified rule number
+-D - Deletes a rule at the specified rule number
+-F - Flushes the rules in the selected chain
+-L - Lists the rules in the selected chain using standard formatting
+-S - Lists the rules in the selected chain without standard formatting
+-P - Sets the default policy for the selected chain
+-n - Disables inverse lookups when listing rules
+--line-numbers - Prints the rule number when listing rules
 
+before you flush, change the default policy!!!!
 
+sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
+sudo iptables -t filter -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -t nat -l
+OUTPUT > SPORT
+INPUT > SPORT
+OUTPUT > DPORT
+OUTPUT > SPORT
 
 
 
