@@ -241,6 +241,27 @@ OUTPUT > SPORT
 
 SECURITY *******************************************************************************
 Stack: 10 	User:RYHO-006-M 	Pass:qc59tHMJ8ChzuQt 	Compromised_Box: 10.50.35.241
+Commands********************************************************************************
+Vulnerability scan on tunnel: nikto -h 127.0.0.1 -p 80
+Service Detection Scan: nmap -sV 127.0.0.1 -p 22
+DNS-Brute: nmap -p 80 --script dns-brute.nse <domain name>
+Virtual Host Detection: nmap -p 80 --script hostmap-bfk.nse <domain name>
+Geo location Traceroute: nmap --traceroute --script traceroute-geolocation.nse -p 80 <domain name>
+OS discovery: nmap -p 445 --script smb-os-discovery <IP Address / Subnet>
+******************************************************************************************
+Firewall Rule Detection:
+nmap -p 80 --script=firewalk.nse <IP Address>
+
+  --script-args=firewalk.max-retries=1 <IP Address>
+  --script-args=firewalk.probe-timeout=400ms <IP Address>
+  --script-args=firewalk.firewalk.max-probed-ports=7 <IP Address>
+******************************************************************************************
+Basic Port Scan Script:
+
+Linux: for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+
+
+Windows: for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i > nul && echo 192.168.1.%i is up.
 
 
 
@@ -249,12 +270,7 @@ Stack: 10 	User:RYHO-006-M 	Pass:qc59tHMJ8ChzuQt 	Compromised_Box: 10.50.35.241
 
 
 
-
-
-
-
-
-
+Web exploitation
 
 
 
