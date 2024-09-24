@@ -319,7 +319,7 @@ Web exploitation
 
 Exploit Devlopment:::
 
-
+breaking overflow and web exploit -------------------------
 disass <FUNCTION>   #   Disassemble portion of the program
 info <...>  #   Supply info for specific stack areas
 x/256c $<REGISTER>  #   Read characters from specific register
@@ -331,9 +331,11 @@ show env
 have to overflow first before running these commands
 #find /b 0xf7de1000, 0xffffe000, 0xff, 0xe4
 info proc map
-
-
-
+-------------------
+msfvenom
+linux/x86/exec)
+show options 
+set CMD cat /.secret/.verysecret.pdb
 
 
 
