@@ -248,6 +248,7 @@ DNS-Brute: nmap -p 80 --script dns-brute.nse <domain name>
 Virtual Host Detection: nmap -p 80 --script hostmap-bfk.nse <domain name>
 Geo location Traceroute: nmap --traceroute --script traceroute-geolocation.nse -p 80 <domain name>
 OS discovery: nmap -p 445 --script smb-os-discovery <IP Address / Subnet>
+Http-Enum: nmap --script http-enum ip
 ******************************************************************************************
 Firewall Rule Detection:
 nmap -p 80 --script=firewalk.nse <IP Address>
@@ -336,7 +337,8 @@ msfvenom
 linux/x86/exec)
 show options 
 set CMD cat /.secret/.verysecret.pdb
-
+Transfer public key, transfer the whole thing copy all of it
+ssh -i .ssh/id_rsa -MS /tmp/t2 www-data@127.0.0.1 -p 8001
 
 
 
